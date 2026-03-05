@@ -68,7 +68,7 @@ const GRAVITY = 10;
 
 function preload() {
   // --- IMAGES ---
-  playerImg = loadImage("assets/foxSpriteSheet.png");
+  playerImg = loadImage("foxSpriteSheet.png");
   bgImg = loadImage("assets/combinedBackground.png");
   groundImg = loadImage("assets/groundTile.png");
   groundDeepImg = loadImage("assets/groundTileDeep.png");
@@ -134,7 +134,7 @@ function draw() {
   // --- BACKGROUND ---
   camera.off();
   imageMode(CORNER);
-  image(bgImg, 0, 0, bgImg.width, bgImg.height);
+  image(bgImg, 0, 0, VIEWW, VIEWH);
   camera.on();
 
   // --- PLAYER CONTROLS ---
