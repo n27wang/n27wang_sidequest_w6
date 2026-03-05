@@ -14,9 +14,12 @@
     d = groundTileDeep.png   (deep ground, below surface)
       = empty (no sprite)
 */
+let stepSound;
+let jumpSound;
 
 let player;
 let playerImg, bgImg;
+let stepCooldown = 0;
 
 let playerAnis = {
   idle: { row: 0, frames: 4, frameDelay: 10 },
@@ -29,7 +32,7 @@ let ground, groundDeep;
 let groundImg, groundDeepImg;
 
 let attacking = false; // track if the player is attacking
-let attackFrameCounter = 0;  // tracking attack animation
+let attackFrameCounter = 0; // tracking attack animation
 
 // --- TILE MAP ---
 // an array that uses the tile key to create the level
@@ -69,6 +72,10 @@ function preload() {
   bgImg = loadImage("assets/combinedBackground.png");
   groundImg = loadImage("assets/groundTile.png");
   groundDeepImg = loadImage("assets/groundTileDeep.png");
+
+  // --- SOUNDS ---
+  stepSound = loadSound("assets/step.mp3");
+  jumpSound = loadSound("assets/jump.mp3");
 }
 
 function setup() {
@@ -133,7 +140,7 @@ function draw() {
   // --- PLAYER CONTROLS ---
   // first check to see if the player is on the ground
   let grounded = sensor.overlapping(ground);
-
+  if (stepCooldown > 0) stepCooldown--;
   // -- ATTACK INPUT --
   if (grounded && !attacking && kb.presses("space")) {
     attacking = true;
@@ -141,12 +148,12 @@ function draw() {
     player.vel.x = 0;
     player.ani.frame = 0;
     player.ani = "attack";
-    player.ani.play();  // plays once to end
+    player.ani.play(); // plays once to end
   }
 
-  // -- JUMP --
   if (grounded && kb.presses("up")) {
     player.vel.y = -4;
+    if (jumpSound) jumpSound.play();
   }
 
   // --- STATE MACHINE ---
@@ -167,15 +174,29 @@ function draw() {
   // --- MOVEMENT ---
   if (!attacking) {
     player.vel.x = 0;
+
     if (kb.pressing("left")) {
       player.vel.x = -1.5;
       player.mirror.x = true;
+
+      if (grounded && stepCooldown === 0 && stepSound) {
+        stepSound.play();
+        stepCooldown = 12; // adjust: smaller = more frequent steps
+      }
     } else if (kb.pressing("right")) {
       player.vel.x = 1.5;
       player.mirror.x = false;
+
+      if (grounded && stepCooldown === 0 && stepSound) {
+        stepSound.play();
+        stepCooldown = 12;
+      }
     }
   }
 
   // --- KEEP IN VIEW ---
   player.pos.x = constrain(player.pos.x, FRAME_W / 2, VIEWW - FRAME_W / 2);
+}
+function keyPressed() {
+  userStartAudio(); // unlock audio in browser
 }
