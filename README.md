@@ -10,28 +10,26 @@ Nick Wang (21064962)
 
 ## Description
 
-This project is a small tile-based platformer prototype created for GBDA302 Side Quest Week 6.  
-The player controls a fox character that can move, jump, and attack while navigating a forest environment. The level uses a custom tile set and sprite animations to create a simple interactive game scene.
+--- This project is a small tile-based platformer created using p5.js and p5.play. The goal of the project was to explore how tile maps, sprite animations, and physics interactions can be combined to build a simple interactive game environment.
 
-The project demonstrates basic platformer mechanics including gravity, collision with ground tiles, character animation states, and sound effects for player actions.
+The player controls a fox character that can move, jump, and attack enemies while collecting items placed throughout the level. The level layout is generated using a tile map system, which allows ground and environment tiles to be placed efficiently. The project also integrates sound effects such as footsteps, jumping, attacking, collecting items, and background music to create a more immersive experience.
 
----
+Through this project, I experimented with combining visual assets, animation systems, and sound feedback to create a cohesive interactive scene.
 
 ## Learning Goals
 
-- Practice using sprite sheets for animation
-- Implement player movement and jumping mechanics
-- Build a tile-based level using p5play
-- Integrate sound effects and background music
-- Organize game assets and file structure in a p5.js project
+- To understand how tile-based level systems work and how tile maps can be used to construct environments efficiently.
+- To practice implementing sprite animations using a sprite sheet for different player states such as idle, running, jumping, and attacking.
+- To integrate sound effects and background music into an interactive p5.js project.
+- To explore how physics and collision detection can be used to support player movement and interaction with the environment.
+- To gain experience organizing a small game project with assets, scripts, and libraries.
 
 ---
 
 ## Asset Credits
 
 Player Sprite:
-Fox sprite sheet from OpenGameArt  
-https://opengameart.org/content/plucky-girl-adventuror-animated
+Fox sprite sheet from OpenGameArt
 
 Tileset:
 Oak Woods Tileset from OpenGameArt  
