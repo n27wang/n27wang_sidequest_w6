@@ -10,26 +10,60 @@ Nick Wang (21064962)
 
 ## Description
 
-This project is a tile-based platformer sketch created for GBDA302 Side Quest Week 6. The player controls a fox character that can move left and right, jump across platforms, and perform an attack animation. The sketch uses a pixel-art background, sprite sheet animation, and a basic ground tile system to create a simple side-scrolling game environment. The project focuses on combining character movement, environmental design, and interactive feedback in p5.js and p5play.
+This project is a small tile-based platformer prototype created for GBDA302 Side Quest Week 6.  
+The player controls a fox character that can move, jump, and attack while navigating a forest environment. The level uses a custom tile set and sprite animations to create a simple interactive game scene.
 
-=======
+The project demonstrates basic platformer mechanics including gravity, collision with ground tiles, character animation states, and sound effects for player actions.
+
+---
 
 ## Learning Goals
 
-- Practice building a tile-based level using p5play
-- Apply sprite sheet animation for idle, run, jump, and attack states
-- Improve understanding of player movement, gravity, and collision
-- Explore how visual and audio feedback can make a game feel more responsive
-- Develop a basic game scene using imported pixel-art assets
+- Practice using sprite sheets for animation
+- Implement player movement and jumping mechanics
+- Build a tile-based level using p5play
+- Integrate sound effects and background music
+- Organize game assets and file structure in a p5.js project
 
-## Assets
+---
 
-- combinedBackground.png – forest background
-- foxSpriteSheet.png – player sprite sheet
-- groundTile.png – surface ground tile
-- groundTileDeep.png – deep ground tile
-- oakwoodstileset.png – additional environment tileset
-- p5.js, p5play.min.js, planck.min.js, p5.sound.min.js – libraries used in the project
+## Asset Credits
+
+Player Sprite:
+Fox sprite sheet from OpenGameArt  
+https://opengameart.org/content/plucky-girl-adventuror-animated
+
+Tileset:
+Oak Woods Tileset from OpenGameArt  
+https://opengameart.org/content/sewer-tileset
+
+Sound Effects:
+Jump / attack / collect / damage sounds
+https://opengameart.org/content/cute-cartoon-jump-sound-effect
+https://opengameart.org/content/attack-miss-or-hit-sounds2
+https://opengameart.org/art-search?keys=collect  
+https://opengameart.org/content/damage-sounds-male-audio-pack
+
+Background Music:
+Looping background music
+https://opengameart.org/content/too-cool-for-words-eric-matyas-zodik-stumpystrust
+
+---
+
+## Libraries Used
+
+- p5.js
+- p5.sound
+- p5play
+- planck.js
+
+---
+
+## Controls
+
+Arrow Left / Arrow Right → Move  
+Arrow Up → Jump  
+Space → Attack
 
 ## GenAI
 
