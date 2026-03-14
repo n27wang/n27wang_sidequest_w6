@@ -68,7 +68,7 @@ const GRAVITY = 10;
 
 function preload() {
   // --- IMAGES ---
-  playerImg = loadImage("foxSpriteSheet.png");
+  playerImg = loadImage("assets/foxSpriteSheet.png");
   bgImg = loadImage("assets/combinedBackground.png");
   groundImg = loadImage("assets/groundTile.png");
   groundDeepImg = loadImage("assets/groundTileDeep.png");
